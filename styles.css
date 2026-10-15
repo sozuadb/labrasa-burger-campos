@@ -1647,14 +1647,11 @@ body {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
   z-index: 200;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.35s var(--ease-cinematic);
+  display: none;
 }
 
 .drawer-backdrop.open {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 .cart-slide-drawer {
@@ -1667,17 +1664,19 @@ body {
   background: #111319;
   border-left: 1px solid var(--border-copper);
   z-index: 210;
-  display: flex;
+  display: none;
   flex-direction: column;
-  transform: translateX(100%);
-  visibility: hidden;
-  transition: transform 0.35s var(--ease-cinematic), visibility 0.35s var(--ease-cinematic);
   box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9);
 }
 
 .cart-slide-drawer.open {
-  transform: translateX(0);
-  visibility: visible;
+  display: flex !important;
+  animation: slideDrawerIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDrawerIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .drawer-header {
