@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Brasa Burger | Campos dos Goytacazes — Gastronomia na Brasa</title>
+  
+  <meta name="description" content="Gastronomia artesanal na brasa em Campos dos Goytacazes. Blends nobres de picanha e costela, queijos fundidos, chopp artesanal e salão climatizado no Centro. Peça no delivery ou reserve sua mesa.">
+  <meta name="keywords" content="La Brasa Burger, Campos dos Goytacazes, hamburgueria artesanal, picanha na brasa, costela defumada, chopp artesanal, Centro Campos RJ">
+  <meta property="og:title" content="La Brasa Burger — Campos dos Goytacazes">
+  <meta property="og:description" content="Cortes nobres, carvão em alta caloria e o verdadeiro sabor da grelha. Conheça nossa unidade no Centro.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80">
+  <meta name="theme-color" content="#111317">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23d97736%22><path d=%22M12 2C8.5 7 5 10 5 14.5a7 7 0 0 0 14 0C19 10 15.5 7 12 2z%22/></svg>">
+
+  <!-- Google Fonts: Editorial Gastronomy Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Brasa Burger Campos dos Goytacazes",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Gil de Góis, 213",
+      "addressLocality": "Campos dos Goytacazes",
+      "addressRegion": "RJ",
+      "postalCode": "28010-065",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -21.7539778,
+      "longitude": -41.3310205
+    },
+    "telephone": "+5522998624900",
+    "servesCuisine": "Burgers Artesanais na Brasa, Cortes Nobres, Cervejas Especiais",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "18:30",
+        "closes": "23:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/labrasaburger.cg/",
+      "https://maps.app.goo.gl/CUUzXs3rTrT6WDYGA"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Subtle Film Grain / Vignette Background Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Top Announcement Bar (Discreet & Professional) -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="location-tag">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Rua Gil de Góis, 213 • Centro, Campos dos Goytacazes
+        </span>
+        <span class="separator-dot">•</span>
+        <span class="delivery-highlight">Delivery & Salão Climatizado</span>
+      </div>
+      <div class="top-bar-right">
+        <div id="liveStatusBadge" class="status-pill">
+          <span class="status-indicator-dot"></span>
+          <span class="status-label">Consultando horário...</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation -->
+  <header class="header" id="mainHeader">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand" aria-label="La Brasa Burger Campos">
+        <div class="brand-monogram">
+          <span class="monogram-letter">LB</span>
+        </div>
+        <div class="brand-naming">
+          <span class="brand-main">LA BRASA</span>
+          <span class="brand-sub">BURGER • CAMPOS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#cardapio" class="nav-item">Cardápio</a>
+        <a href="#anatomia" class="nav-item">A Grelha & Blends</a>
+        <a href="#salao" class="nav-item">O Restaurante</a>
+        <a href="#avaliacoes" class="nav-item">Experiência</a>
+        <a href="#localizacao" class="nav-item">Localização</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Cart Drawer Trigger -->
+        <button id="cartToggleBtn" class="cart-trigger" aria-label="Abrir pedido">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-trigger-label">Pedido</span>
+          <span id="cartCountBadge" class="cart-pill-count">0</span>
+        </button>
+
+        <a href="https://wa.me/5522998624900?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20La%20Brasa%20Campos." 
+           target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold btn-header-cta">
+          <span>Concierge WhatsApp</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button id="mobileMenuToggle" class="menu-toggle-btn" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section: Editorial & Cinematic -->
+    <section class="hero" id="hero">
+      <div class="hero-backdrop-image"></div>
+      <div class="hero-vignette"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="gold-line"></span>
+            <span class="eyebrow-text">GRELHADOS EM ALTA TEMPERATURA NO CARVÃO</span>
+          </div>
+
+          <h1 class="hero-title">
+            O AUTÊNTICO SABOR DA <span class="text-accent">BRASA</span> EM CAMPOS DOS GOYTACAZES.
+          </h1>
+
+          <p class="hero-p">
+            Cortes nobres moídos in-house diariamente, fumaça aromática de carvão selecionado, pães de brioche artesanais e queijos fundidos no fogo direto. Uma experiência gastronômica feita para quem leva hambúrguer a sério.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#cardapio" class="btn btn-gold">
+              <span>Explorar o Cardápio</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button onclick="openReservationModal()" class="btn btn-glass">
+              <span>Reservar Salão</span>
+            </button>
+          </div>
+
+          <div class="hero-meta-row">
+            <div class="meta-item">
+              <span class="meta-val">200g</span>
+              <span class="meta-desc">Blends Nobres na Brasa</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-val">4.8★</span>
+              <span class="meta-desc">Avaliação Verificada</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-val">Centro</span>
+              <span class="meta-desc">R. Gil de Góis, 213</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="dish-showcase-frame">
+            <div class="dish-glow"></div>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Picanha Burger Supremo La Brasa Burger" class="dish-hero-img" loading="eager">
+            
+            <div class="dish-meta-card">
+              <div class="dish-meta-header">
+                <div>
+                  <span class="dish-tag">DESTAQUE DA COZINHA</span>
+                  <h3 class="dish-name">Picanha Burger Supremo</h3>
+                </div>
+                <span class="dish-price">R$ 38,90</span>
+              </div>
+              <p class="dish-ingredients">
+                Blend de picanha 200g na grelha, queijo prato derretido, tiras de bacon crocante, maionese verde e pão brioche amanteigado.
+              </p>
+              <button class="btn btn-sm btn-gold-subtle" onclick="addToCart('picanha-supremo'); openCartDrawer();">
+                + Adicionar ao Pedido
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Banner: Sleek Brand Pillars -->
+    <div class="brand-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>GRELHADOS NA BRASA</span>
+        <span class="dot">✦</span>
+        <span>PICANHA NOBRE 200G</span>
+        <span class="dot">✦</span>
+        <span>DEFUMAÇÃO EM CARVÃO SELECIONADO</span>
+        <span class="dot">✦</span>
+        <span>CHOPP ARTESANAL TRINCANDO</span>
+        <span class="dot">✦</span>
+        <span>CAMPOS DOS GOYTACAZES</span>
+        <span class="dot">✦</span>
+        <span>PÃO ARTESANAL TOSTADO NA MANTEIGA</span>
+        <span class="dot">✦</span>
+        <span>GRELHADOS NA BRASA</span>
+        <span class="dot">✦</span>
+        <span>PICANHA NOBRE 200G</span>
+        <span class="dot">✦</span>
+        <span>DEFUMAÇÃO EM CARVÃO SELECIONADO</span>
+        <span class="dot">✦</span>
+      </div>
+    </div>
+
+    <!-- Pillars of Craft: A Anatomia do Sabor -->
+    <section class="craft-pillars-section" id="anatomia">
+      <div class="container">
+        <div class="section-lead text-center">
+          <span class="kicker">NOSSA DISCIPLINA DE COZINHA</span>
+          <h2 class="title-serif">A ANATOMIA DE UM VERDADEIRO BURGER NA BRASA</h2>
+          <p class="subtitle-text">
+            Não utilizamos chapas prensadas convencionais. Nosso preparo respeita o calor direto do carvão mineral e vegetal em alta temperatura, criando a selagem ideal e preservando a umidade natural do corte.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-title">Fogo Vivo & Crosta Maillard</h3>
+            <p class="pillar-description">
+              A gordura nobre pinga sobre o carvão incandescente e vaporiza em fumaça densa e aromática, conferindo a crosta crocante e o perfume inconfundível de churrasco legítimo.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-title">Cortes Nobres Selecionados</h3>
+            <p class="pillar-description">
+              Blends de picanha pura, costela de primeiro corte e fraldinha fresca. Zero aditivos, zero conservantes industriais. Apenas carne nobre e tempero exclusivo.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-title">Panificação Artesanal</h3>
+            <p class="pillar-description">
+              Brioche aerado amanteigado, pão australiano de cacau suave e pão francês crocante, tostados na manteiga na grelha para criar uma barreira térmica perfeita.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <span class="pillar-number">04</span>
+            <h3 class="pillar-title">Molhos & Queijos Fundidos</h3>
+            <p class="pillar-description">
+              Baconese autoral com pedaços reais de bacon defumado, Catupiry original maçaricado na brasa e queijo gouda fundido para o equilíbrio de untuosidade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Cardápio Section -->
+    <section class="menu-section" id="cardapio">
+      <div class="container">
+        <div class="menu-header-bar">
+          <div>
+            <span class="kicker">CARDÁPIO SELECIONADO</span>
+            <h2 class="title-serif">CARDÁPIO & CARTA DA COZINHA</h2>
+            <p class="subtitle-text">Escolha seus itens, acompanhe o subtotal em tempo real e encaminhe seu pedido direto ao atendimento.</p>
+          </div>
+
+          <!-- View Mode Toggle (Visual Cards vs Bistro List) -->
+          <div class="view-mode-toggle" id="viewModeToggle">
+            <button class="view-btn active" data-view="grid" aria-label="Visualização em grade">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span>Fotos</span>
+            </button>
+            <button class="view-btn" data-view="list" aria-label="Visualização em lista clássica">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              <span>Bistrô</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Pills Bar -->
+        <div class="filter-pills-container">
+          <div class="filter-pills-nav" id="menuFilters">
+            <button class="filter-pill active" data-category="all">Todos os Cortes</button>
+            <button class="filter-pill" data-category="picanha">Linha Picanha (200g)</button>
+            <button class="filter-pill" data-category="costela">Linha Costela (200g)</button>
+            <button class="filter-pill" data-category="smash">Linha Smash & Frango</button>
+            <button class="filter-pill" data-category="porcoes">Porções & Fritas</button>
+            <button class="filter-pill" data-category="bebidas">Chopes & Bebidas</button>
+            <button class="filter-pill" data-category="sobremesas">Sobremesas</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Menu Container -->
+        <div id="menuRenderArea" class="menu-display-area grid-mode">
+          <!-- Injected via app.js -->
+        </div>
+
+        <!-- Bottom Assistance Callout -->
+        <div class="menu-concierge-callout">
+          <div class="callout-text">
+            <h4>Deseja personalizar o ponto da carne ou solicitar pedido corporativo?</h4>
+            <p>Nosso concierge no WhatsApp atende prontamente para orientar escolhas, harmonizações e pedidos especiais.</p>
+          </div>
+          <a href="https://wa.me/5522998624900?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20card%C3%A1pio." 
+             target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+            Atendimento WhatsApp (22) 99862-4900
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef's Pairing & Experience -->
+    <section class="pairing-feature-section">
+      <div class="container pairing-grid">
+        <div class="pairing-image-block">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+               alt="Grelha profissional em alta caloria" class="pairing-img" loading="lazy">
+          <div class="pairing-badge">
+            <span class="badge-accent">TRADIÇÃO</span>
+            <span class="badge-caption">Grelha argentina inclinada que evita fuligem excessiva</span>
+          </div>
+        </div>
+
+        <div class="pairing-info-block">
+          <span class="kicker">HARMONIZAÇÃO DA CASA</span>
+          <h2 class="title-serif">A COMBINAÇÃO IDEAL: CARNE DE BRASA & CHOPP ARTESANAL</h2>
+          <p class="paragraph-lead">
+            A gordura entremeada da carne bovina selada em brasa viva encontra seu contraponto ideal no colarinho cremoso e no amargor aromático dos lúpulos nobres. Servido rigorosamente em canecas ultracongeladas para manter a temperatura do primeiro ao último gole.
+          </p>
+
+          <div class="pairing-spec-list">
+            <div class="spec-row">
+              <span class="spec-label">Temperatura de Serviço</span>
+              <span class="spec-value">-2°C na Caneca Embaçada</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Harmonização Recomendada</span>
+              <span class="spec-value">Costelão La Brasa + Chopp IPA Artesanal</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Ponto Padrão da Carne</span>
+              <span class="spec-value">Ao Ponto (Rosado e Suculento no Centro)</span>
+            </div>
+          </div>
+
+          <div class="action-wrap">
+            <a href="https://wa.me/5522998624900?text=Ol%C3%A1!%20Gostaria%20de%20saber%20os%20chopes%20engatados%20hoje." 
+               target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+              Consultar Chopes do Dia
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programação Semanal & Salão Climatizado -->
+    <section class="saloon-section" id="salao">
+      <div class="container">
+        <div class="section-lead text-center">
+          <span class="kicker">SALÃO & HOSPITALIDADE NO CENTRO</span>
+          <h2 class="title-serif">O PONTO DE ENCONTRO EM CAMPOS DOS GOYTACAZES</h2>
+          <p class="subtitle-text">
+            Um ambiente contemporâneo, climatizado e pensado para conversas tranquilas, comemorações entre amigos ou um jantar reservado a dois.
+          </p>
+        </div>
+
+        <div class="saloon-gallery-grid">
+          <div class="saloon-card-large">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Salão contemporâneo do restaurante" loading="lazy">
+            <div class="saloon-card-overlay">
+              <h3>Salão Climatizado no Centro</h3>
+              <p>Iluminação quente, acústica confortável e mesas amplas para acomodar turmas e famílias.</p>
+            </div>
+          </div>
+
+          <div class="saloon-card-side">
+            <div class="side-img-wrap">
+              <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80" 
+                   alt="Balcão de chopp artesanal" loading="lazy">
+              <div class="side-caption">Chopp Puro Malte Gelado</div>
+            </div>
+            <div class="side-img-wrap">
+              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80" 
+                   alt="Porções artesanais saindo da cozinha" loading="lazy">
+              <div class="side-caption">Batatas Rústicas e Molhos da Casa</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Programming Strip -->
+        <div class="weekly-schedule">
+          <div class="schedule-column">
+            <span class="day-label">TERÇA-FEIRA</span>
+            <h4>Noite do Smash</h4>
+            <p>Condição especial na linha de burgers smash duplos.</p>
+          </div>
+          <div class="schedule-column highlight-schedule">
+            <span class="day-label">QUARTA & QUINTA</span>
+            <h4>Happy Hour da Brasa</h4>
+            <p>Chopp artesanal com valor exclusivo das 18h30 às 20h30.</p>
+          </div>
+          <div class="schedule-column">
+            <span class="day-label">SEXTA & SÁBADO</span>
+            <h4>Noite dos Cortes Nobres</h4>
+            <p>Linha completa de Picanha e Costela com cortes selecionados.</p>
+          </div>
+          <div class="schedule-column">
+            <span class="day-label">DOMINGO</span>
+            <h4>Domingo em Família</h4>
+            <p>Combos compartilhados e porções generosas para grupos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos & Avaliações Reais -->
+    <section class="reviews-section" id="avaliacoes">
+      <div class="container">
+        <div class="section-lead text-center">
+          <span class="kicker">REPUTAÇÃO GASTRONÔMICA</span>
+          <h2 class="title-serif">O QUE DIZEM NOSSOS CLIENTES EM CAMPOS</h2>
+          <p class="subtitle-text">Avaliações públicas verificadas de frequentadores do salão e clientes do delivery.</p>
+        </div>
+
+        <div class="reviews-editorial-grid">
+          <article class="review-box">
+            <div class="review-rating">★★★★★</div>
+            <blockquote class="review-quote">
+              "Sem dúvida o melhor hambúrguer de Campos. A diferença de ser grelhado na brasa de verdade é absurda: a carne fica suculenta, no ponto perfeito e com aquele aroma de defumado que você não encontra em hamburgueria de chapa. O atendimento no Centro é impecável."
+            </blockquote>
+            <div class="reviewer-meta">
+              <div class="reviewer-sig">RF</div>
+              <div>
+                <strong class="reviewer-name">Rodrigo Fonseca</strong>
+                <span class="reviewer-origin">Avaliação no Google Maps • Cliente Frequente</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-box">
+            <div class="review-rating">★★★★★</div>
+            <blockquote class="review-quote">
+              "Pedimos o Costelão e o Picanha Supremo pelo delivery. Chegou super rápido na Pelinca, embalagem térmica de altíssima qualidade e a batata ainda estalando de crocante. O blend de costela desfiada desmancha na boca."
+            </blockquote>
+            <div class="reviewer-meta">
+              <div class="reviewer-sig">MS</div>
+              <div>
+                <strong class="reviewer-name">Mariana Silveira</strong>
+                <span class="reviewer-origin">Pedido via WhatsApp • Bairro Pelinca</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-box">
+            <div class="review-rating">★★★★★</div>
+            <blockquote class="review-quote">
+              "Excelente opção para happy hour após o expediente. Salão climatizado muito agradável no Centro, chopp artesanal servido em caneca congelada de verdade e porções bem servidas. Recomendo muito a batata com cheddar e bacon."
+            </blockquote>
+            <div class="reviewer-meta">
+              <div class="reviewer-sig">LC</div>
+              <div>
+                <strong class="reviewer-name">Lucas Carvalho</strong>
+                <span class="reviewer-origin">Visita ao Salão • Sexta-feira</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Google Score Badge (Refined & Minimal) -->
+        <div class="google-verified-strip">
+          <div class="strip-left">
+            <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.1-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15s.7 5.3 1.9 7.7l3.7-2.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.4C3.7 20.1 7.5 23 12 23z"/></svg>
+            <div>
+              <strong>Pontuação 4.8 / 5.0 estrelas</strong>
+              <span>Classificação oficial consolidada no Google Maps</span>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/CUUzXs3rTrT6WDYGA" target="_blank" rel="noopener noreferrer" class="link-discrete">
+            Abrir página no Google Maps →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localização & Atendimento -->
+    <section class="location-section" id="localizacao">
+      <div class="container">
+        <div class="location-layout">
+          <div class="location-details">
+            <span class="kicker">ONDE ESTAMOS</span>
+            <h2 class="title-serif">RUA GIL DE GÓIS, 213 • CENTRO</h2>
+            <p class="subtitle-text">Localizado estrategicamente no coração de Campos dos Goytacazes, com fácil acesso e opções de estacionamento nas imediações.</p>
+
+            <div class="operational-data-list">
+              <div class="data-block">
+                <span class="data-title">Horário de Funcionamento</span>
+                <p><strong>Terça a Domingo:</strong> 18h30 às 23h30</p>
+                <span class="data-sub">Segunda-feira: Manutenção e descanso da brigada</span>
+              </div>
+
+              <div class="data-block">
+                <span class="data-title">Canais de Contato</span>
+                <p>Telefone / WhatsApp: <a href="tel:+5522998624900" class="gold-link">(22) 99862-4900</a></p>
+                <p>Instagram Oficial: <a href="https://www.instagram.com/labrasaburger.cg/" target="_blank" rel="noopener noreferrer" class="gold-link">@labrasaburger.cg</a></p>
+              </div>
+
+              <div class="data-block">
+                <span class="data-title">Área de Atendimento Delivery</span>
+                <p>Atendemos toda a região central, Pelinca, Parque Tamandaré, Flamboyant e bairros adjacentes de Campos dos Goytacazes.</p>
+              </div>
+            </div>
+
+            <div class="route-actions-row">
+              <a href="https://maps.app.goo.gl/CUUzXs3rTrT6WDYGA" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+                Navegar via Google Maps
+              </a>
+              <a href="https://waze.com/ul?q=Rua%20Gil%20de%20G%C3%B3is%20213%20Campos%20dos%20Goytacazes" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                Traçar Rota no Waze
+              </a>
+            </div>
+          </div>
+
+          <!-- Stylized Map View -->
+          <div class="map-container-wrap">
+            <div class="map-card-shell">
+              <div class="map-top-bar">
+                <span class="map-pin-indicator"></span>
+                <span class="map-title-txt">La Brasa Burger — Unidade Campos dos Goytacazes</span>
+              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14828.988891461413!2d-41.3400205!3d-21.7539778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd510fa911047%3A0xfa9d0b2e92717eb4!2sLa%20Brasa%20Burger%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de localização La Brasa Burger Campos">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-column">
+        <div class="brand-monogram">
+          <span class="monogram-letter">LB</span>
+        </div>
+        <h3 class="footer-brand-title">LA BRASA BURGER</h3>
+        <p class="footer-description">
+          A arte da grelha em alta temperatura e o rigor em cortes nobres. Hambúrgueres artesanais de verdade em Campos dos Goytacazes.
+        </p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/labrasaburger.cg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Oficial">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://wa.me/5522998624900" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Concierge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </a>
+          <a href="https://maps.app.goo.gl/CUUzXs3rTrT6WDYGA" target="_blank" rel="noopener noreferrer" aria-label="Página no Google Maps">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-column">
+        <h4 class="footer-title">Navegação</h4>
+        <ul class="footer-links-list">
+          <li><a href="#hero">Apresentação</a></li>
+          <li><a href="#cardapio">Cardápio Completo</a></li>
+          <li><a href="#anatomia">A Grelha & Blends</a></li>
+          <li><a href="#salao">O Restaurante</a></li>
+          <li><a href="#avaliacoes">Avaliações de Clientes</a></li>
+          <li><a href="#localizacao">Como Chegar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-column">
+        <h4 class="footer-title">Horários</h4>
+        <div class="footer-info-text">
+          <p><strong>Terça a Domingo</strong><br>18h30 às 23h30</p>
+          <p class="text-stone">Segundas-feiras: Fechado</p>
+          <p class="mt-2"><strong>Unidade:</strong><br>Rua Gil de Góis, 213 - Centro, Campos dos Goytacazes/RJ</p>
+        </div>
+      </div>
+
+      <div class="footer-nav-column">
+        <h4 class="footer-title">Pedidos & Reservas</h4>
+        <div class="footer-info-text">
+          <p>WhatsApp Concierge:<br><strong>(22) 99862-4900</strong></p>
+          <p class="mt-2 text-stone">Atendimento personalizado para pedidos de salão, delivery e reservas de eventos.</p>
+          <a href="https://wa.me/5522998624900" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-gold mt-3">
+            Iniciar Conversa
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-line">
+      <div class="container footer-bottom-flex">
+        <span>© 2026 La Brasa Burger Campos dos Goytacazes. Gastronomia na Brasa.</span>
+        <span>Rua Gil de Góis, 213 • Centro, Campos/RJ</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Refined Cart Slide-Over Drawer -->
+  <div id="cartDrawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="cartDrawer" class="cart-slide-drawer" aria-labelledby="drawerTitle">
+    <div class="drawer-header">
+      <div>
+        <h3 id="drawerTitle" class="drawer-heading">SEU PEDIDO</h3>
+        <span id="cartDrawerSubtitle" class="drawer-subtitle">Nenhum item selecionado</span>
+      </div>
+      <button id="closeCartBtn" class="drawer-close-btn" aria-label="Fechar carrinho">&times;</button>
+    </div>
+
+    <!-- Empty State -->
+    <div id="cartEmptyState" class="empty-state-view">
+      <div class="empty-monogram">LB</div>
+      <h4>Seu pedido está vazio</h4>
+      <p>Navegue pelos cortes nobres no cardápio e monte seu pedido com preparo sob medida.</p>
+      <button class="btn btn-gold btn-sm" onclick="closeCartAndScroll()">Explorar Cardápio</button>
+    </div>
+
+    <!-- Selected Items Container -->
+    <div id="cartItemsList" class="drawer-items-list">
+      <!-- Items dynamically populated via app.js -->
+    </div>
+
+    <!-- Order Configuration Form -->
+    <div id="cartOrderForm" class="drawer-order-form">
+      <div class="form-mode-switch">
+        <label class="mode-tab active">
+          <input type="radio" name="orderType" value="delivery" checked id="orderTypeDelivery">
+          <span>Entrega (Delivery)</span>
+        </label>
+        <label class="mode-tab">
+          <input type="radio" name="orderType" value="retirada" id="orderTypeRetirada">
+          <span>Retirada no Salão</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label for="custName">Nome do Cliente *</label>
+        <input type="text" id="custName" class="luxury-input" placeholder="Ex: Roberto Alencar" required>
+      </div>
+
+      <div id="deliveryFieldsWrap">
+        <div class="form-field">
+          <label for="custAddress">Endereço de Entrega (Rua, Nº, Bairro) *</label>
+          <input type="text" id="custAddress" class="luxury-input" placeholder="Ex: Rua Barão da Lagoa Dourada, 250 - Pelinca">
+        </div>
+        <div class="form-field">
+          <label for="custRef">Complemento ou Ponto de Referência</label>
+          <input type="text" id="custRef" class="luxury-input" placeholder="Ex: Apto 402, em frente à pracinha">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="custPayment">Forma de Pagamento</label>
+        <select id="custPayment" class="luxury-input">
+          <option value="PIX">PIX (Chave enviada pelo atendimento)</option>
+          <option value="Cartão de Crédito">Cartão de Crédito (Máquina móvel)</option>
+          <option value="Cartão de Débito">Cartão de Débito</option>
+          <option value="Dinheiro">Dinheiro (Informar se necessita de troco)</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="custNotes">Observações do Ponto ou Ingredientes</label>
+        <textarea id="custNotes" class="luxury-input" rows="2" placeholder="Ex: Carne ao ponto, sem cebola em 1 burger..."></textarea>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div id="cartDrawerFooter" class="drawer-footer">
+      <div class="summary-line">
+        <span>Subtotal dos Itens:</span>
+        <strong id="cartSubtotal" class="summary-total">R$ 0,00</strong>
+      </div>
+      <div class="summary-line subtitle-line">
+        <span id="deliveryNote">Taxa de entrega calculada pelo endereço em Campos</span>
+      </div>
+
+      <button id="sendOrderWhatsAppBtn" class="btn btn-gold btn-block">
+        <span>Encaminhar Pedido ao WhatsApp</span>
+      </button>
+      <span class="secure-legend">Atendimento oficial da unidade Centro: (22) 99862-4900</span>
+    </div>
+  </aside>
+
+  <!-- Reservation Modal -->
+  <div id="reservationModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-top">
+        <h3 class="title-serif">RESERVA DE MESA & EVENTOS</h3>
+        <button class="modal-close" onclick="closeReservationModal()">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p class="modal-instruction">
+          Planeje sua visita ao salão climatizado do La Brasa Burger Campos dos Goytacazes. Mesas reservadas para comemorações, aniversários ou jantares.
+        </p>
+
+        <form id="reservationForm" onsubmit="submitReservation(event)">
+          <div class="form-field">
+            <label for="resName">Nome Completo *</label>
+            <input type="text" id="resName" class="luxury-input" placeholder="Ex: Larissa Monteiro" required>
+          </div>
+
+          <div class="form-dual-row">
+            <div class="form-field">
+              <label for="resDate">Data Desejada *</label>
+              <input type="date" id="resDate" class="luxury-input" required>
+            </div>
+            <div class="form-field">
+              <label for="resTime">Horário (A partir das 18h30) *</label>
+              <select id="resTime" class="luxury-input" required>
+                <option value="18:30">18:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00" selected>20:00</option>
+                <option value="20:30">20:30</option>
+                <option value="21:00">21:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="resPeople">Número de Convidados *</label>
+            <select id="resPeople" class="luxury-input" required>
+              <option value="2 pessoas">2 Pessoas (Mesa Bistrô)</option>
+              <option value="3 a 4 pessoas">3 a 4 Pessoas</option>
+              <option value="5 a 8 pessoas">5 a 8 Pessoas (Mesa Compartilhada)</option>
+              <option value="9 a 15 pessoas">Aniversário / Turma (9 a 15 pessoas)</option>
+              <option value="Acima de 15 pessoas">Confraternização / Acima de 15 pessoas</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="resOccasion">Ocasião (Opcional)</label>
+            <input type="text" id="resOccasion" class="luxury-input" placeholder="Ex: Aniversário, comemoração de empresa, reencontro...">
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-block mt-3">
+            Confirmar Reserva no WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle Floating Concierge Button -->
+  <a href="https://wa.me/5522998624900?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20La%20Brasa%20Campos." 
+     target="_blank" rel="noopener noreferrer" class="floating-concierge" aria-label="Atendimento Concierge WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span class="concierge-tooltip">Concierge WhatsApp</span>
+  </a>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-stack"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
