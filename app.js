@@ -434,8 +434,6 @@ function closeCartAndScroll() {
 }
 
 function submitOrderToWhatsApp() {
-  if (cart.length === 0) return;
-
   const nameInput = document.getElementById('custName');
   const addressInput = document.getElementById('custAddress');
   const refInput = document.getElementById('custRef');
@@ -443,59 +441,52 @@ function submitOrderToWhatsApp() {
   const notesText = document.getElementById('custNotes');
   const isDelivery = document.getElementById('orderTypeDelivery')?.checked ?? true;
 
-  const name = nameInput ? nameInput.value.trim() : '';
-  const address = addressInput ? addressInput.value.trim() : '';
-  const ref = refInput ? refInput.value.trim() : '';
+  const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Cliente';
+  const address = addressInput && addressInput.value.trim() ? addressInput.value.trim() : '';
+  const ref = refInput && refInput.value.trim() ? refInput.value.trim() : '';
   const payment = paymentSelect ? paymentSelect.value : 'PIX';
-  const notes = notesText ? notesText.value.trim() : '';
+  const notes = notesText && notesText.value.trim() ? notesText.value.trim() : '';
 
-  if (!name) {
-    alert('Por favor, informe seu nome.');
-    if (nameInput) nameInput.focus();
-    return;
+  let msg = '';
+
+  if (!cart || cart.length === 0) {
+    msg = `Olá! Gostaria de consultar o cardápio e fazer um pedido no La Brasa Burger Campos.`;
+  } else {
+    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    msg = `*SOLICITAÇÃO DE PEDIDO — LA BRASA BURGER CAMPOS*\n`;
+    msg += `────────────────────────────\n`;
+    msg += `*Cliente:* ${name}\n`;
+    msg += `*Modalidade:* ${isDelivery ? 'Entrega em Domicílio (Delivery)' : 'Retirada no Salão (Centro)'}\n`;
+    
+    if (isDelivery) {
+      msg += `*Endereço:* ${address ? address : '(Informar na conversa)'}\n`;
+      if (ref) msg += `*Referência:* ${ref}\n`;
+    }
+    
+    msg += `*Forma de Pagamento:* ${payment}\n`;
+    if (notes) {
+      msg += `*Observações:* ${notes}\n`;
+    }
+
+    msg += `────────────────────────────\n`;
+    msg += `*ITENS DO PEDIDO:*\n`;
+
+    cart.forEach(item => {
+      const itemTotal = (item.price * item.quantity).toFixed(2).replace('.', ',');
+      msg += `• ${item.quantity}x ${item.name} — R$ ${itemTotal}\n`;
+    });
+
+    msg += `────────────────────────────\n`;
+    msg += `*Subtotal:* R$ ${totalPrice.toFixed(2).replace('.', ',')}\n`;
+    if (isDelivery) {
+      msg += `_(Taxa de entrega a calcular conforme o bairro)_\n`;
+    }
+    msg += `\nGentileza confirmar o pedido e o tempo estimado!`;
   }
 
-  if (isDelivery && !address) {
-    alert('Por favor, informe o endereço de entrega em Campos.');
-    if (addressInput) addressInput.focus();
-    return;
-  }
-
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-  // High-standard concierge order formatting
-  let msg = `*SOLICITAÇÃO DE PEDIDO — LA BRASA BURGER CAMPOS*\n`;
-  msg += `────────────────────────────\n`;
-  msg += `*Cliente:* ${name}\n`;
-  msg += `*Modalidade:* ${isDelivery ? 'Entrega em Domicílio (Delivery)' : 'Retirada no Salão (Centro)'}\n`;
-  
-  if (isDelivery) {
-    msg += `*Endereço:* ${address}\n`;
-    if (ref) msg += `*Referência:* ${ref}\n`;
-  }
-  
-  msg += `*Forma de Pagamento:* ${payment}\n`;
-  if (notes) {
-    msg += `*Observações:* ${notes}\n`;
-  }
-
-  msg += `────────────────────────────\n`;
-  msg += `*ITENS DO PEDIDO:*\n`;
-
-  cart.forEach(item => {
-    const itemTotal = (item.price * item.quantity).toFixed(2).replace('.', ',');
-    msg += `• ${item.quantity}x ${item.name} — R$ ${itemTotal}\n`;
-  });
-
-  msg += `────────────────────────────\n`;
-  msg += `*Subtotal:* R$ ${totalPrice.toFixed(2).replace('.', ',')}\n`;
-  if (isDelivery) {
-    msg += `_(Taxa de entrega a calcular conforme o bairro)_\n`;
-  }
-  msg += `\nGentileza confirmar o recebimento e o tempo estimado de preparo.`;
-
-  const url = `https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+  const url = `https://api.whatsapp.com/send?phone=${STORE_PHONE}&text=${encodeURIComponent(msg)}`;
+  window.location.href = url;
 }
 
 // ==========================================
@@ -559,11 +550,11 @@ function closeReservationModal() {
 }
 
 function submitReservation(e) {
-  e.preventDefault();
-  const name = document.getElementById('resName')?.value.trim() || '';
+  if (e && e.preventDefault) e.preventDefault();
+  const name = document.getElementById('resName')?.value.trim() || 'Cliente';
   const date = document.getElementById('resDate')?.value || '';
   const time = document.getElementById('resTime')?.value || '';
-  const people = document.getElementById('resPeople')?.value || '';
+  const people = document.getElementById('resPeople')?.value || '2 pessoas';
   const occasion = document.getElementById('resOccasion')?.value.trim() || '';
 
   let dateFormatted = date;
@@ -575,8 +566,8 @@ function submitReservation(e) {
   let msg = `*SOLICITAÇÃO DE RESERVA — LA BRASA BURGER CAMPOS*\n`;
   msg += `────────────────────────────\n`;
   msg += `*Nome do Responsável:* ${name}\n`;
-  msg += `*Data da Reserva:* ${dateFormatted}\n`;
-  msg += `*Horário Pretendido:* ${time}\n`;
+  msg += `*Data da Reserva:* ${dateFormatted || 'A combinar'}\n`;
+  msg += `*Horário Pretendido:* ${time || '19:00'}\n`;
   msg += `*Número de Lugares:* ${people}\n`;
   if (occasion) {
     msg += `*Ocasião / Observações:* ${occasion}\n`;
@@ -585,8 +576,8 @@ function submitReservation(e) {
   msg += `Gostaria de verificar a disponibilidade de mesa no salão para a data solicitada.`;
 
   closeReservationModal();
-  const url = `https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+  const url = `https://api.whatsapp.com/send?phone=${STORE_PHONE}&text=${encodeURIComponent(msg)}`;
+  window.location.href = url;
 }
 
 // ==========================================
